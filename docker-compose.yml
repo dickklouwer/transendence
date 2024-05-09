@@ -23,7 +23,7 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
     init: true
-    restart: on-failure
+    restart: always
     ports:
       - "2424:2424"
       - "4243:4243"
