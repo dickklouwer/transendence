@@ -1,42 +1,30 @@
 "use client"
 
 import Image from "next/image";
+import { useState } from "react";
+import LikeButton from "./like-button";
+import JisseHeader from "@/components/jisse";
 
 export default function HomePage() {
   
-  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];  
-  
-  
-  function handleClick() {
-    console.log("increment like count")
-  }
-
+  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
 
   return ( 
   <div>
-    <Header title="Develop. Preview. Ship." />
+    <JisseHeader />
+    <Header title="Develp. Preview. Ship." />
     <ul>
       {names.map((name, idx) => (
         <li key={idx}>{name}</li>
       ))}
     </ul>
-    <button onClick={handleClick}>Like & Subscribe</button>
+    <LikeButton />
   </div>
   );
-}
-
-function createTitle(title : string)
-{
-  if (title) {
-    return title;
-  } else {
-    return 'Default Title';
-  }
-
 }
 
 function Header ({ title } : {title:string}) 
 {
   console.log(title);
-  return <h1>{createTitle(title)}</h1>
+  return <h1>{title ? title : "Default title"}</h1>
 }
