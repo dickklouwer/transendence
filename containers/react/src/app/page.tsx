@@ -1,30 +1,22 @@
 "use client"
 
 import Image from "next/image";
-import { useState } from "react";
-import LikeButton from "./like-button";
+import HomeButton from "../components/like-button";
 import JisseHeader from "@/components/jisse";
 
+
 export default function HomePage() {
-  
-  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
 
-  return ( 
-  <div>
-    <JisseHeader />
-    <Header title="Develp. Preview. Ship." />
-    <ul>
-      {names.map((name, idx) => (
-        <li key={idx}>{name}</li>
-      ))}
-    </ul>
-    <LikeButton />
-  </div>
-  );
-}
+  // const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
 
-function Header ({ title } : {title:string}) 
-{
-  console.log(title);
-  return <h1>{title ? title : "Default title"}</h1>
-}
+  return (
+    <div>
+      <HomeButton />
+    </div>
+    );
+  }
+// function Header ({ title } : {title:string}) 
+// {
+//   console.log(title);
+//   return <p>{title ? title : "Default title"}</p>
+// }
